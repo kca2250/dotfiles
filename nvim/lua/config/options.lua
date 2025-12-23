@@ -30,3 +30,8 @@ opt.clipboard = "unnamedplus"
 opt.mouse = "a"
 opt.splitright = true
 opt.splitbelow = true
+
+-- 折りたたみ設定
+opt.foldmethod = "expr"
+opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+opt.foldlevel = 99 -- 起動時は全部開いた状態

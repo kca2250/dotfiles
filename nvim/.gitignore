@@ -1,0 +1,13 @@
+# lazy.nvim
+lazy-lock.json
+
+# undo/swap/backup
+*.swp
+*.swo
+*~
+
+# plugin data
+spell/
+
+# mason (LSP用、後で使うかも)
+mason/

@@ -28,5 +28,14 @@ fi
 ln -sf "$DOTFILES_DIR/.zshrc" ~/.zshrc
 echo "[done] .zshrc linked"
 
+# nvimのシンボリックリンク
+mkdir -p ~/.config
+if [ -d ~/.config/nvim ] && [ ! -L ~/.config/nvim ]; then
+    mv ~/.config/nvim ~/.config/nvim.backup
+    echo "[backup] nvim config"
+fi
+ln -sf "$DOTFILES_DIR/nvim" ~/.config/nvim
+echo "[done] nvim linked"
+
 echo "=== setup complete! ==="
 echo "Run 'source ~/.zshrc' or restart terminal"

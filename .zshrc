@@ -44,5 +44,25 @@ alias gp='git push'
 # ========================================
 # プラグイン
 # ========================================
-source ~/dotfiles/zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/dotfiles/zsh-plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+if [ -f ~/dotfiles/zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+    source ~/dotfiles/zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+
+if [ -f ~/dotfiles/zsh-plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+    source ~/dotfiles/zsh-plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
+
+# ========================================
+# PATH設定（OS別）
+# ========================================
+export PATH="$HOME/.local/bin:$PATH"
+
+# Mac専用
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    export PATH="$HOME/.volta/bin:$PATH"
+fi
+
+# WSL専用
+if [[ -n "$WSL_DISTRO_NAME" ]]; then
+    # WSL固有のPATHがあればここに
+fi

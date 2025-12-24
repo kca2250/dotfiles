@@ -7,8 +7,8 @@ return {
 		},
 		config = function()
 			require("toggleterm").setup({
-				size = 15,
-				direction = "horizontal",
+				size = 55,
+				direction = "vertical",
 				shade_terminals = false,
 			})
 

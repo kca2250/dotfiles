@@ -13,6 +13,7 @@ return {
 				{ "<leader>f", group = "Find (Telescope)" },
 				{ "<leader>h", group = "Git Hunk" },
 				{ "<leader>c", group = "Code" },
+				{ "<leader>a", group = "ClaudeCode" },
 			})
 		end,
 	},

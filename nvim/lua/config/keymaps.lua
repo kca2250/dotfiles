@@ -16,3 +16,9 @@ keymap("n", "<C-l>", "<C-w>l", { desc = "Move right" })
 
 -- ESCでハイライト消す
 keymap("n", "<Esc>", ":nohlsearch<CR>", { desc = "Clear search" })
+
+-- ウィンドウサイズ調整
+keymap("n", "<A-Up>", ":resize +2<CR>", { desc = "Height +2" })
+keymap("n", "<A-Down>", ":resize -2<CR>", { desc = "Height -2" })
+keymap("n", "<A-Left>", ":vertical resize -2<CR>", { desc = "Width -2" })
+keymap("n", "<A-Right>", ":vertical resize +2<CR>", { desc = "Width +2" })

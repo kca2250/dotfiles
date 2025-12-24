@@ -8,7 +8,7 @@ return {
 					enable = true,
 				},
 				indent = {
-					enable = true,
+					enable = false,
 				},
 				line_num = {
 					enable = true,

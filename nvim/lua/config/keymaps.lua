@@ -17,6 +17,12 @@ keymap("n", "<C-l>", "<C-w>l", { desc = "Move right" })
 -- ESCでハイライト消す
 keymap("n", "<Esc>", ":nohlsearch<CR>", { desc = "Clear search" })
 
+-- jk で Esc（インサートモード）
+keymap("i", "jk", "<Esc>", { desc = "Exit insert mode" })
+
+-- ターミナルモードでも
+keymap("t", "jk", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
+
 -- ウィンドウサイズ調整
 keymap("n", "<A-Up>", ":resize +2<CR>", { desc = "Height +2" })
 keymap("n", "<A-Down>", ":resize -2<CR>", { desc = "Height -2" })

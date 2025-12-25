@@ -37,5 +37,13 @@ fi
 ln -sf "$DOTFILES_DIR/nvim" ~/.config/nvim
 echo "[done] nvim linked"
 
+# weztermのシンボリックリンク
+if [ -f ~/.wezterm.lua ] && [ ! -L ~/.wezterm.lua ]; then
+    mv ~/.wezterm.lua ~/.wezterm.lua.backup
+    echo "[backup] .wezterm.lua"
+fi
+ln -sf "$DOTFILES_DIR/wezterm/wezterm.lua" ~/.wezterm.lua
+echo "[done] wezterm linked"
+
 echo "=== setup complete! ==="
 echo "Run 'source ~/.zshrc' or restart terminal"

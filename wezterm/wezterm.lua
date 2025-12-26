@@ -14,8 +14,8 @@ config.font_size = 14.0
 config.color_scheme = "Catppuccin Mocha"
 
 -- ウィンドウ
-config.initial_cols = 130 -- 横幅（文字数）
-config.initial_rows = 55 -- 高さ（行数）
+config.initial_cols = 120
+config.initial_rows = 35
 config.window_padding = {
 	left = 10,
 	right = 10,
@@ -57,6 +57,14 @@ config.colors = {
 			fg_color = "#cdd6f4",
 		},
 	},
+	-- アクティブペインの枠線
+	split = "#cba6f7", -- 分割線の色（紫）
+}
+
+-- ペインのフォーカス枠
+config.inactive_pane_hsb = {
+	saturation = 0.8,
+	brightness = 0.6,
 }
 
 -- タブのフォーマット
@@ -67,6 +75,48 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 	end
 	return " " .. (tab.tab_index + 1) .. ": " .. title .. " "
 end)
+
+-- カーソル
+config.default_cursor_style = "BlinkingBar"
+config.cursor_blink_rate = 500
+
+-- スクロール
+config.scrollback_lines = 10000
+config.enable_scroll_bar = false
+
+-- URL自動リンク
+config.hyperlink_rules = wezterm.default_hyperlink_rules()
+
+-- キーバインド
+config.keys = {
+	-- ペイン分割
+	{ key = "|", mods = "CTRL|SHIFT", action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+	{ key = "_", mods = "CTRL|SHIFT", action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }) },
+	-- ペイン移動
+	{ key = "LeftArrow", mods = "ALT", action = wezterm.action.ActivatePaneDirection("Left") },
+	{ key = "RightArrow", mods = "ALT", action = wezterm.action.ActivatePaneDirection("Right") },
+	{ key = "UpArrow", mods = "ALT", action = wezterm.action.ActivatePaneDirection("Up") },
+	{ key = "DownArrow", mods = "ALT", action = wezterm.action.ActivatePaneDirection("Down") },
+	-- ペインサイズ調整
+	{ key = "LeftArrow", mods = "CTRL|SHIFT", action = wezterm.action.AdjustPaneSize({ "Left", 5 }) },
+	{ key = "RightArrow", mods = "CTRL|SHIFT", action = wezterm.action.AdjustPaneSize({ "Right", 5 }) },
+	{ key = "UpArrow", mods = "CTRL|SHIFT", action = wezterm.action.AdjustPaneSize({ "Up", 5 }) },
+	{ key = "DownArrow", mods = "CTRL|SHIFT", action = wezterm.action.AdjustPaneSize({ "Down", 5 }) },
+	-- ペインを閉じる
+	{ key = "w", mods = "CTRL|SHIFT", action = wezterm.action.CloseCurrentPane({ confirm = true }) },
+	-- コピペ
+	{ key = "c", mods = "CTRL|SHIFT", action = wezterm.action.CopyTo("Clipboard") },
+	{ key = "v", mods = "CTRL|SHIFT", action = wezterm.action.PasteFrom("Clipboard") },
+}
+
+-- マウス右クリックでペースト
+config.mouse_bindings = {
+	{
+		event = { Down = { streak = 1, button = "Right" } },
+		mods = "NONE",
+		action = wezterm.action.PasteFrom("Clipboard"),
+	},
+}
 
 -- その他
 config.audible_bell = "Disabled"

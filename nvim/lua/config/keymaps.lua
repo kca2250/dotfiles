@@ -14,6 +14,9 @@ keymap("n", "<C-j>", "<C-w>j", { desc = "Move down" })
 keymap("n", "<C-k>", "<C-w>k", { desc = "Move up" })
 keymap("n", "<C-l>", "<C-w>l", { desc = "Move right" })
 
+-- エラー詳細を表示
+keymap("n", "gl", vim.diagnostic.open_float, { desc = "エラー詳細を表示" })
+
 -- ESCでハイライト消す
 keymap("n", "<Esc>", ":nohlsearch<CR>", { desc = "Clear search" })
 

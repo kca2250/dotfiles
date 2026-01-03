@@ -8,7 +8,7 @@ end
 
 -- フォント
 config.font = wezterm.font("0xProto Nerd Font Mono")
-config.font_size = 14.0
+config.font_size = 15.5
 
 -- カラースキーム
 config.color_scheme = "Catppuccin Mocha"
@@ -92,6 +92,8 @@ config.keys = {
 	-- ペイン分割
 	{ key = "|", mods = "CTRL|SHIFT", action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
 	{ key = "_", mods = "CTRL|SHIFT", action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }) },
+	-- Shift+Enter
+	{ key = "Enter", mods = "SHIFT", action = wezterm.action.SendString("\x1b\r") },
 	-- ペイン移動
 	{ key = "LeftArrow", mods = "ALT", action = wezterm.action.ActivatePaneDirection("Left") },
 	{ key = "RightArrow", mods = "ALT", action = wezterm.action.ActivatePaneDirection("Right") },
@@ -108,7 +110,6 @@ config.keys = {
 	{ key = "c", mods = "CTRL|SHIFT", action = wezterm.action.CopyTo("Clipboard") },
 	{ key = "v", mods = "CTRL|SHIFT", action = wezterm.action.PasteFrom("Clipboard") },
 }
-
 -- マウス右クリックでペースト
 config.mouse_bindings = {
 	{

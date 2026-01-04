@@ -1,11 +1,6 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
--- OS判定してデフォルトシェルを設定
-if wezterm.target_triple:find("windows") then
-	config.default_domain = "WSL:Ubuntu"
-end
-
 -- フォント
 config.font = wezterm.font("0xProto Nerd Font Mono")
 config.font_size = 15.5

@@ -62,11 +62,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     export PATH="$HOME/.volta/bin:$PATH"
 fi
 
-# WSL専用
-if [[ -n "$WSL_DISTRO_NAME" ]]; then
-    # WSL固有のPATHがあればここに
-fi
-
 # ========================================
 # カスタムコマンド
 # ========================================

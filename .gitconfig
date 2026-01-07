@@ -24,7 +24,7 @@
     br = branch
     cm = commit -m
     sw = switch
-    lg = log --oneline --graph --decorate excludesfile = ~/.gitignore_global
+    lg = log --oneline --graph --decorate
 
 [commit]
     verbose = true # コミットメッセージ書く時に変更内容を見れる

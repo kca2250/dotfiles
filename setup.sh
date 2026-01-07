@@ -67,6 +67,23 @@ else
 fi
 
 # -----------------------------------------------------------------------------
+# Git Hooks のシンボリックリンク
+# -----------------------------------------------------------------------------
+GIT_HOOKS_DIR="$HOME/.config/git/hooks"
+
+mkdir -p "$GIT_HOOKS_DIR"
+
+if [ -f "$DOTFILES_DIR/git-hooks/pre-commit" ]; then
+    ln -sf "$DOTFILES_DIR/git-hooks/pre-commit" "$GIT_HOOKS_DIR/pre-commit"
+    echo "[done] git pre-commit hook linked"
+fi
+
+if [ -f "$DOTFILES_DIR/git-hooks/pre-push" ]; then
+    ln -sf "$DOTFILES_DIR/git-hooks/pre-push" "$GIT_HOOKS_DIR/pre-push"
+    echo "[done] git pre-push hook linked"
+fi
+
+# -----------------------------------------------------------------------------
 # gitignore_global のシンボリックリンク
 # -----------------------------------------------------------------------------
 GITIGNORE_GLOBAL="$HOME/.gitignore_global"

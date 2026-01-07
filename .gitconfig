@@ -34,6 +34,7 @@
 
 [core]
     ignorecase = false # ファイル名の大文字、小文字を区別してくれる
+    hooksPath = ~/.config/git/hooks
 
 [fetch]
     prune = true # fetch -pを自動で

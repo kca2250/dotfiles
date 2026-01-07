@@ -1,5 +1,42 @@
 [user]
 	name = kca2250
 	email = 2250katok@gmail.com
+
+[init]
+    defaultBranch = main
+
 [core]
-  excludesfile = ~/.gitignore_global
+    excludesfile = ~/.gitignore_global
+
+[push]
+    default = current
+    autoSetupRemote = true
+
+[pull]
+    rebase = true
+
+[diff]
+    colorMoved = default
+
+[alias]
+    st = status
+    co = checkout
+    br = branch
+    cm = commit -m
+    sw = switch
+    lg = log --oneline --graph --decorate excludesfile = ~/.gitignore_global
+
+[commit]
+    verbose = true # コミットメッセージ書く時に変更内容を見れる
+
+[merge]
+    conflictstyle = diff3 # コンフリクト時に「元の状態」も見えるように
+
+[core]
+    ignorecase = false # ファイル名の大文字、小文字を区別してくれる
+
+[fetch]
+    prune = true # fetch -pを自動で
+
+[branch] 
+    sort = -committerdate # 最近使ったブランチを上に

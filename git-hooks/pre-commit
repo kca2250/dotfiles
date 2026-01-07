@@ -5,7 +5,7 @@ protected_branches=("main" "master" "develop")
 for protected in "${protected_branches[@]}"; do
   if [ "$branch" == "$protected" ]; then
     echo ""
-    echo "⚠️  保護ブランチ（$branch）への直接コミットは禁止されています"
+    echo "⚠️ このブランチへの直接コミットは禁止されています"
     echo ""
     echo "作業用ブランチを作成してください:"
     echo "  git switch -c feature/xxx"

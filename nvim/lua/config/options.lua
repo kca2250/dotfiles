@@ -1,5 +1,9 @@
 local opt = vim.opt
 
+--　タイトル編集
+opt.title = true
+opt.titlestring = "nvim: [ %{fnamemodify(getcwd(), ':t')} ]"
+
 -- 行番号
 opt.number = true
 opt.relativenumber = false

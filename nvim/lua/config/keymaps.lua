@@ -37,3 +37,16 @@ keymap("n", "<leader>sv", ":vs<CR>", { desc = "Split vertical" })
 keymap("n", "<leader>sh", ":sp<CR>", { desc = "Split horizontal" })
 keymap("n", "<leader>sx", ":close<CR>", { desc = "Close split" })
 keymap("n", "<leader>se", "<C-w>=", { desc = "Equal size splits" })
+
+-- ノーマルモード：Alt + j/k で行移動
+keymap("n", "<A-j>", ":m .+1<CR>==", { desc = "Move line down" })
+keymap("n", "<A-k>", ":m .-2<CR>==", { desc = "Move line up" })
+
+-- ビジュアルモード：選択範囲を移動
+keymap("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
+keymap("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
+
+-- LSPの自動Code Action
+keymap("n", "<leader>ca", function()
+	vim.lsp.buf.code_action()
+end, { desc = "Code Action" })

@@ -15,7 +15,6 @@ return {
 		config = function()
 			require("conform").setup({
 				formatters_by_ft = {
-					python = { "black" },
 					javascript = { "prettier" },
 					typescript = { "prettier" },
 					html = { "prettier" },
@@ -23,7 +22,7 @@ return {
 					json = { "prettier" },
 					yaml = { "prettier" },
 					lua = { "stylua" },
-					ruby = { "rubocop" },
+					graphql = { "prettier" },
 				},
 				format_on_save = {
 					timeout_ms = 500,

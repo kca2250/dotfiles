@@ -17,13 +17,12 @@ return {
 		},
 		opts = {
 			ensure_installed = {
-				"pyright",
 				"ts_ls",
 				"html",
 				"cssls",
 				"lua_ls",
-				"ruby_lsp",
 				"tailwindcss",
+				"graphql",
 			},
 			automatic_enable = true,
 		},
@@ -35,10 +34,8 @@ return {
 		dependencies = { "mason-org/mason.nvim" },
 		opts = {
 			ensure_installed = {
-				"black",
 				"prettier",
 				"stylua",
-				"rubocop",
 			},
 		},
 	},

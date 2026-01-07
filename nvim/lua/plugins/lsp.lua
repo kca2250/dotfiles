@@ -23,6 +23,7 @@ return {
 				"cssls",
 				"lua_ls",
 				"ruby_lsp",
+				"tailwindcss",
 			},
 			automatic_enable = true,
 		},

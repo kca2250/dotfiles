@@ -4,6 +4,12 @@ local keymap = vim.keymap.set
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- マウススクロールも無効化
+vim.keymap.set({ "n", "i", "v" }, "<ScrollWheelUp>", "<Nop>")
+vim.keymap.set({ "n", "i", "v" }, "<ScrollWheelDown>", "<Nop>")
+vim.keymap.set({ "n", "i", "v" }, "<ScrollWheelLeft>", "<Nop>")
+vim.keymap.set({ "n", "i", "v" }, "<ScrollWheelRight>", "<Nop>")
+
 -- 保存・終了
 keymap("n", "<leader>w", ":w<CR>", { desc = "Save" })
 keymap("n", "<leader>q", ":q<CR>", { desc = "Quit" })

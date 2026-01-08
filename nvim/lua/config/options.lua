@@ -1,4 +1,6 @@
 local opt = vim.opt
+-- nvim環境下ではマウス禁止
+opt.mouse = ""
 
 --　タイトル編集
 opt.title = true

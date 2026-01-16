@@ -1,19 +1,15 @@
 return {
 	{
-		"catppuccin/nvim",
-		name = "catppuccin",
+		"ATTron/bebop.nvim",
+		lazy = false,
 		priority = 1000,
 		config = function()
-			require("catppuccin").setup({
-				flavour = "mocha",
+			require("bebop").setup({
+				transparent = true,
+				terminal_colors = true,
+				preset = "default", -- "default", "spike", "faye" から選べる
 			})
-			vim.cmd.colorscheme("catppuccin")
-			-- 背景透過
-			vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
-			vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
-			vim.api.nvim_set_hl(0, "NormalNC", { bg = "NONE" }) -- 非アクティブウィンドウも
-			vim.api.nvim_set_hl(0, "SignColumn", { bg = "NONE" })
-			vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "NONE" })
+			vim.cmd.colorscheme("bebop")
 		end,
 	},
 }

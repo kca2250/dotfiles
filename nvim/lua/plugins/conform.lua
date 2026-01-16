@@ -23,6 +23,7 @@ return {
 					yaml = { "prettier" },
 					lua = { "stylua" },
 					graphql = { "prettier" },
+					go = { "goimports", "gofmt" },
 				},
 				format_on_save = {
 					timeout_ms = 500,

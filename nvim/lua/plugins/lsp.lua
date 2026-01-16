@@ -23,6 +23,7 @@ return {
 				"lua_ls",
 				"tailwindcss",
 				"graphql",
+				"gopls",
 			},
 			automatic_enable = true,
 		},
@@ -36,6 +37,7 @@ return {
 			ensure_installed = {
 				"prettier",
 				"stylua",
+				"goimports",
 			},
 		},
 	},

@@ -32,11 +32,11 @@ keymap("i", "jk", "<Esc>", { desc = "Exit insert mode" })
 -- ターミナルモードでも
 keymap("t", "jk", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
 
--- ウィンドウサイズ調整
-keymap("n", "<A-Up>", ":resize +2<CR>", { desc = "Height +2" })
-keymap("n", "<A-Down>", ":resize -2<CR>", { desc = "Height -2" })
-keymap("n", "<A-Left>", ":vertical resize -2<CR>", { desc = "Width -2" })
-keymap("n", "<A-Right>", ":vertical resize +2<CR>", { desc = "Width +2" })
+-- ウィンドウサイズ調整 (Ctrl + Alt + 矢印)
+keymap("n", "<C-A-Up>", ":resize +2<CR>", { desc = "Height +2" })
+keymap("n", "<C-A-Down>", ":resize -2<CR>", { desc = "Height -2" })
+keymap("n", "<C-A-Left>", ":vertical resize +2<CR>", { desc = "Width +2" })
+keymap("n", "<C-A-Right>", ":vertical resize -2<CR>", { desc = "Width -2" })
 
 -- ウィンドウ分割
 keymap("n", "<leader>sv", ":vs<CR>", { desc = "Split vertical" })

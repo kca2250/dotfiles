@@ -11,11 +11,13 @@ return {
 			wk.add({
 				-- Leader グループ
 				{ "<leader>f", group = "Find (Telescope)" },
-				{ "<leader>h", group = "Git Hunk" },
+				{ "<leader>h", group = "Git Hunk / Harpoon" },
 				{ "<leader>c", group = "Code" },
 				{ "<leader>x", group = "Trouble" },
 				{ "<leader>a", group = "AI/Claude" },
 				{ "<leader>s", group = "Split" },
+				{ "<leader>g", group = "Git" },
+				{ "<leader>q", group = "Session" },
 
 				-- LSP (g)
 				{ "g", group = "Go to / LSP" },

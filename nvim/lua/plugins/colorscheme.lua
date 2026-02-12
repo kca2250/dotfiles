@@ -1,15 +1,15 @@
 return {
 	{
-		"ATTron/bebop.nvim",
+		"navarasu/onedark.nvim",
 		lazy = false,
 		priority = 1000,
 		config = function()
-			require("bebop").setup({
+			require("onedark").setup({
+				style = "dark",
 				transparent = true,
-				terminal_colors = true,
-				preset = "default", -- "default", "spike", "faye" から選べる
+				term_colors = true,
 			})
-			vim.cmd.colorscheme("bebop")
+			require("onedark").load()
 		end,
 	},
 }

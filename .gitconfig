@@ -19,7 +19,9 @@
     colorMoved = default
 
 [alias]
-    st = status
+    st = status --short --branch -uall
+    d  = diff
+    ds = diff --staged
     co = checkout
     br = branch
     cm = commit -m

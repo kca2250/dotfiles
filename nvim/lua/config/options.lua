@@ -25,6 +25,7 @@ opt.hlsearch = true
 opt.termguicolors = true
 opt.signcolumn = "yes"
 opt.cursorline = true
+opt.wrap = false
 
 -- ファイル
 opt.swapfile = false

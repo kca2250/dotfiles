@@ -1,9 +1,0 @@
-{
-  "env": {
-    "CLAUDE_CODE_ENABLE_TELEMETRY": "false",
-    "DISABLE_AUTOUPDATER": "true"
-  },
-  "gitCoAuthorEnabled": false,
-  "alwaysThinkingEnabled": true,
-  "notificationChannel": "terminal_bell"
-}

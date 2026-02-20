@@ -36,11 +36,16 @@ PROMPT='%F{cyan}%~%f %F{magenta}${vcs_info_msg_0_}%f
 alias ls='ls --color=auto'
 alias ll='ls -la'
 alias la='ls -a'
-alias gs='git status'
-alias ga='git add'
-alias gc='git commit'
-alias gp='git push'
 
+# GitHub PR系
+alias prl="gh pr list"
+alias prv="gh pr view --web"
+alias prst="gh pr status"
+alias prdiff="gh pr diff"
+
+# GitHub Issue系
+alias issl="gh issue list"
+alias issv="gh issue view --web"
 # ========================================
 # プラグイン
 # ========================================

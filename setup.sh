@@ -127,6 +127,26 @@ if [ -f "$DOTFILES_DIR/claude/settings.json" ]; then
     echo "[done] claude settings.json linked"
 fi
 
+
+# -----------------------------------------------------------------------------
+# bat のシンボリックリンク
+# -----------------------------------------------------------------------------
+BAT_CONFIG_DIR="$HOME/.config/bat"
+
+mkdir -p "$BAT_CONFIG_DIR"
+
+if [ -f "$BAT_CONFIG_DIR/config" ] && [ ! -L "$BAT_CONFIG_DIR/config" ]; then
+    mv "$BAT_CONFIG_DIR/config" "$BAT_CONFIG_DIR/config.backup"
+    echo "[backup] bat config"
+fi
+
+if [ -f "$DOTFILES_DIR/bat/config" ]; then
+    ln -sf "$DOTFILES_DIR/bat/config" "$BAT_CONFIG_DIR/config"
+    echo "[done] bat linked"
+else
+    echo "[warn] bat config not found in dotfiles, skipping..."
+fi
+
 # -----------------------------------------------------------------------------
 # 完了メッセージ
 # -----------------------------------------------------------------------------

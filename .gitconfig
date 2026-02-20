@@ -7,6 +7,9 @@
 
 [core]
     excludesfile = ~/.gitignore_global
+    ignorecase = false # ファイル名の大文字、小文字を区別してくれる
+    hooksPath = ~/.config/git/hooks
+    pager = bat --plain --language=diff --file-name="GitDiff" --paging=always
 
 [push]
     default = current
@@ -15,11 +18,8 @@
 [pull]
     rebase = true
 
-[diff]
-    colorMoved = default
-
 [alias]
-    st = status --short --branch -uall
+    st = status --branch -uall
     d  = diff
     ds = diff --staged
     co = checkout
@@ -34,12 +34,13 @@
 [merge]
     conflictstyle = diff3 # コンフリクト時に「元の状態」も見えるように
 
-[core]
-    ignorecase = false # ファイル名の大文字、小文字を区別してくれる
-    hooksPath = ~/.config/git/hooks
-
 [fetch]
     prune = true # fetch -pを自動で
 
 [branch] 
     sort = -committerdate # 最近使ったブランチを上に
+
+
+[diff]
+    stat = true
+    colorMoved = default

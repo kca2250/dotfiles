@@ -46,6 +46,14 @@ alias prdiff="gh pr diff"
 # GitHub Issue系
 alias issl="gh issue list"
 alias issv="gh issue view --web"
+
+alias cat="bat"
+alias ls="eza --icons"
+alias la="eza -la --icons --git"
+alias lt="eza --tree --icons --git-ignore"
+alias find="fd"
+alias grep="rg"
+
 # ========================================
 # プラグイン
 # ========================================
@@ -61,15 +69,23 @@ fi
 # PATH設定（OS別）
 # ========================================
 export PATH="$HOME/.local/bin:$PATH"
+eval "$(zoxide init zsh)"
 
-# Mac専用
-if [[ "$OSTYPE" == "darwin"* ]]; then
-    export PATH="$HOME/.volta/bin:$PATH"
-fi
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
 
 # ========================================
 # カスタムコマンド
 # ========================================
 
 # cd をしたときにlsを実行する
-function chpwd() { ls -GvF }
+function chpwd() { eza --icons --git }
+
+# batでファイルを開いた時にedit, diff, quitが選択できるように
+function bn() {
+  bat --diff "$1"
+  read "reply?(e)dit / (q)uit: "
+  case "$reply" in
+    e) nvim "$1" ;;
+  esac
+}

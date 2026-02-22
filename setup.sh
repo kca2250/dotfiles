@@ -3,6 +3,74 @@ ZSH_PLUGINS_DIR="$DOTFILES_DIR/zsh-plugins"
 
 echo "=== dotfiles setup start ==="
 
+# -----------------------------------------------------------------------------
+# Homebrew パッケージのインストール
+# -----------------------------------------------------------------------------
+if ! command -v brew &>/dev/null; then
+    echo "[install] Homebrew"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+else
+    echo "[skip] Homebrew already installed"
+fi
+
+FORMULAE=(
+    bat
+    ca-certificates
+    eza
+    fd
+    fzf
+    gettext
+    gh
+    go
+    lazygit
+    libgit2
+    libssh2
+    libunistring
+    libuv
+    lpeg
+    luajit
+    luv
+    neovim
+    openssl@3
+    pcre2
+    ripgrep
+    tree-sitter@0.25
+    unibilium
+    utf8proc
+    volta
+    zoxide
+)
+
+CASKS=(
+    1password
+    adguard
+    alfred
+    claude-code
+    ghostty
+    google-chrome
+    spotify
+)
+
+echo "[install] Homebrew formulae"
+for formula in "${FORMULAE[@]}"; do
+    if brew list --formula "$formula" &>/dev/null; then
+        echo "  [skip] $formula"
+    else
+        echo "  [install] $formula"
+        brew install "$formula"
+    fi
+done
+
+echo "[install] Homebrew casks"
+for cask in "${CASKS[@]}"; do
+    if brew list --cask "$cask" &>/dev/null; then
+        echo "  [skip] $cask"
+    else
+        echo "  [install] $cask"
+        brew install --cask "$cask"
+    fi
+done
+
 # プラグインディレクトリ作成
 mkdir -p "$ZSH_PLUGINS_DIR"
 

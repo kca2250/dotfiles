@@ -80,12 +80,3 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 
 # cd をしたときにlsを実行する
 function chpwd() { eza --icons --git }
-
-# batでファイルを開いた時にedit, diff, quitが選択できるように
-function bn() {
-  bat --diff "$1"
-  read "reply?(e)dit / (q)uit: "
-  case "$reply" in
-    e) nvim "$1" ;;
-  esac
-}

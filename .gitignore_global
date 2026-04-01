@@ -5,3 +5,5 @@
 .idea/
 .vscode/
 CLAUDE.md
+.github/prompts/
+.ai-notes/

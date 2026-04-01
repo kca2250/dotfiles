@@ -82,3 +82,6 @@ export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
 # cd をしたときにlsを実行する
 function chpwd() { eza --icons --git }
+
+# GitHub Copilot prompts ヘルパー
+source "$HOME/dotfiles/copilot/setup-prompts.sh"

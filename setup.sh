@@ -173,18 +173,23 @@ fi
 # -----------------------------------------------------------------------------
 # Claude Code のシンボリックリンク
 # -----------------------------------------------------------------------------
+CLAUDE_DIR="$HOME/.claude"
 CLAUDE_CONFIG_DIR="$HOME/.config/claude"
 
-# Claude設定ディレクトリ作成
-mkdir -p "$CLAUDE_CONFIG_DIR"
-
-# commands ディレクトリのシンボリックリンク
+# commands ディレクトリのシンボリックリンク（~/.claude/commands/ がスキル読み込み先）
+mkdir -p "$CLAUDE_DIR"
 if [ -d "$DOTFILES_DIR/claude/commands" ]; then
-    ln -sf "$DOTFILES_DIR/claude/commands" "$CLAUDE_CONFIG_DIR/commands"
+    if [ -d "$CLAUDE_DIR/commands" ] && [ ! -L "$CLAUDE_DIR/commands" ]; then
+        mv "$CLAUDE_DIR/commands" "$CLAUDE_DIR/commands.backup"
+        echo "[backup] claude commands"
+    fi
+    ln -sf "$DOTFILES_DIR/claude/commands" "$CLAUDE_DIR/commands"
     echo "[done] claude commands linked"
 fi
 
 # settings.json のシンボリックリンク
+mkdir -p "$CLAUDE_CONFIG_DIR"
+
 if [ -f "$CLAUDE_CONFIG_DIR/settings.json" ] && [ ! -L "$CLAUDE_CONFIG_DIR/settings.json" ]; then
     mv "$CLAUDE_CONFIG_DIR/settings.json" "$CLAUDE_CONFIG_DIR/settings.json.backup"
     echo "[backup] claude settings.json"

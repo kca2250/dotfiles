@@ -61,14 +61,6 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
-if [ -f ~/dotfiles/zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
-    source ~/dotfiles/zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-fi
-
-if [ -f ~/dotfiles/zsh-plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
-    source ~/dotfiles/zsh-plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-fi
-
 # ========================================
 # PATH設定（OS別）
 # ========================================
@@ -86,6 +78,3 @@ export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
 # cd をしたときにlsを実行する
 function chpwd() { eza --icons --git }
-
-# GitHub Copilot prompts ヘルパー
-source "$HOME/dotfiles/copilot/setup-prompts.sh"

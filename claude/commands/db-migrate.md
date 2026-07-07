@@ -1,6 +1,6 @@
 ---
 name: db-migrate
-description: DBスキーマ変更・マイグレーションを安全に実施する。
+description: DBスキーマの変更・カラム追加削除・マイグレーション作成を行うときに使用。
 user-invocable: true
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 argument-hint: "[変更内容の説明]"

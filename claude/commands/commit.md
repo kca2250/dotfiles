@@ -1,6 +1,9 @@
 ---
-description: コミットメッセージを生成
-argument-hint: [空欄で自動生成 or メッセージのヒント]
+name: commit
+description: コミットメッセージの生成やコミットの実行を頼まれたときに使用
+user-invocable: true
+allowed-tools: Read, Glob, Grep, Bash
+argument-hint: "[空欄で自動生成 or メッセージのヒント]"
 ---
 
 現在のステージング済みの変更内容を確認し、Conventional Commits 形式でコミットメッセージを日本語で生成してください。

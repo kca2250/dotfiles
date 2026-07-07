@@ -1,6 +1,9 @@
 ---
-description: React/Next.js コードレビュー（ベストプラクティス準拠）
-argument-hint: [対象ファイル or 空欄で最近の変更]
+name: review-fe
+description: React/Next.js のフロントエンドコードのレビューを頼まれたときに使用（ベストプラクティス準拠）
+user-invocable: true
+allowed-tools: Read, Glob, Grep, Bash
+argument-hint: "[対象ファイル or 空欄で最近の変更]"
 ---
 
 以下のコードをReact/Next.jsのベストプラクティスに基づいてレビューしてください: $ARGUMENTS
@@ -30,6 +33,12 @@ argument-hint: [対象ファイル or 空欄で最近の変更]
 - 適切な型定義（any型の回避）
 - エラーハンドリング（try-catch、Error Boundary）
 - ローディング/エラー/空状態の考慮
+
+## 指摘の前提
+
+- 対象コードを実際に読んでから指摘する（ファイル名や差分からの推測で指摘しない）
+- 各指摘に `file:line` を明記する
+- 修正案は対象コードの実際のパターン（import・命名・書き方）に合わせる
 
 ## 出力形式
 

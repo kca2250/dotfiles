@@ -1,6 +1,9 @@
 ---
-description: プルリクエストを作成
-argument-hint: [空欄で自動生成 or PRの説明のヒント]
+name: pr
+description: プルリクエストの作成を頼まれたときに使用
+user-invocable: true
+allowed-tools: Read, Glob, Grep, Bash
+argument-hint: "[空欄で自動生成 or PRの説明のヒント]"
 ---
 
 現在のブランチの変更内容を確認し、プルリクエストを作成してください。

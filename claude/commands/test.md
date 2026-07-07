@@ -1,6 +1,9 @@
 ---
-description: テストコード作成（Vitest/Testing Library対応）
-argument-hint: [対象ファイル]
+name: test
+description: テストコードの作成・追加を頼まれたときに使用（Vitest/Testing Library対応）
+user-invocable: true
+allowed-tools: Read, Write, Edit, Glob, Grep, Bash
+argument-hint: "[対象ファイル]"
 ---
 
 以下のコードに対するテストを作成してください: $ARGUMENTS
@@ -78,3 +81,9 @@ describe('対象の名前', () => {
 - 既存のテストファイルがあれば、そのスタイルに合わせる
 - スナップショットテストは構造確認が目的の場合のみ使用
 - 非同期テストは `async/await` を適切に使用
+
+## 完了条件
+
+- 作成したテストを **実際に実行** し、結果を確認する
+- 実行コマンドと結果（pass / fail 件数）を報告する（実行せずに「完了」と報告しない）
+- 失敗が残る場合は、失敗内容と原因の見立てを添えて報告する

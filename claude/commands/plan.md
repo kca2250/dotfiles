@@ -1,6 +1,6 @@
 ---
 name: plan
-description: 実装前の計画策定。仕様・既存コードを分析し、段階的な実装ステップを設計する。
+description: 実装に着手する前の計画策定・ステップ設計が必要なときに使用。
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Bash, Agent
 argument-hint: "[実装対象の説明 or 仕様書パス]"

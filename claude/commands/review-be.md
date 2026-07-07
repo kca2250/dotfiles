@@ -1,6 +1,9 @@
 ---
-description: バックエンドコードレビュー（Node.js/TypeScript/Zod）
-argument-hint: [対象ファイル or 空欄で最近の変更]
+name: review-be
+description: Node.js/TypeScript/Zod のバックエンドコードのレビューを頼まれたときに使用
+user-invocable: true
+allowed-tools: Read, Glob, Grep, Bash
+argument-hint: "[対象ファイル or 空欄で最近の変更]"
 ---
 
 以下のバックエンドコードをベストプラクティスに基づいてレビューしてください: $ARGUMENTS
@@ -42,6 +45,12 @@ argument-hint: [対象ファイル or 空欄で最近の変更]
 - RESTful原則への準拠（適切なHTTPメソッド、ステータスコード）
 - レスポンス形式の一貫性
 - 適切なエラーレスポンス構造
+
+## 指摘の前提
+
+- 対象コードを実際に読んでから指摘する（ファイル名や差分からの推測で指摘しない）
+- 各指摘に `file:line` を明記する
+- 修正案は対象コードの実際のパターン（import・命名・書き方）に合わせる
 
 ## 出力形式
 

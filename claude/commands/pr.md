@@ -83,3 +83,4 @@ Google アカウントを使用したログイン機能を実装しました。
 - プッシュされていない場合は、先にプッシュするか確認
 - developブランチにいる場合は、PRを作成できない旨を伝える
 - ベースブランチはデフォルトで `develop` を使用
+- `develop` が存在しないリポジトリでは、`gh repo view --json defaultBranchRef -q .defaultBranchRef.name` でデフォルトブランチを取得して base に使用する

@@ -1,6 +1,6 @@
 ---
 name: investigate
-description: コード・仕様・バグの原因を構造的に調査し、結果をレポートする。
+description: バグ原因・仕様との乖離・実装状態の調査とレポートが必要なときに使用（修正はしない）。
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Bash, Agent
 argument-hint: "[調査対象の説明]"

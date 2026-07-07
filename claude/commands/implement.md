@@ -1,6 +1,6 @@
 ---
 name: implement
-description: コードの実装・修正を段階的に安全に行う。新機能追加、バグ修正、UI調整など。
+description: 新機能追加・バグ修正・UI調整などコードの実装・修正を行うときに使用。
 user-invocable: true
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash, Agent
 argument-hint: "[実装内容の説明 or 修正対象]"

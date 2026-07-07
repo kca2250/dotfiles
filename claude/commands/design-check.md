@@ -1,6 +1,6 @@
 ---
 name: design-check
-description: デザインデータ（Figma等）と実装のUI差分を検出・修正する。
+description: Figma等のデザインデータと実装UIの差分確認・修正を頼まれたときに使用。
 user-invocable: true
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash, Agent
 argument-hint: "[デザインツールURL or 対象画面名]"

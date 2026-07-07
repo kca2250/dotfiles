@@ -1,6 +1,6 @@
 ---
 name: fix-types
-description: 型チェック・静的解析のエラーを体系的に修正する。
+description: 型エラー・lintエラー・静的解析の警告を修正するときに使用。
 user-invocable: true
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 argument-hint: "[エラーログ or 対象ファイル（省略時は全体をチェック）]"

@@ -1,6 +1,6 @@
 ---
 name: seed-data
-description: seedデータの作成・更新を安全に実施する。開発用のダミーデータ生成。
+description: 開発用のseedデータ・ダミーデータの作成・更新を行うときに使用。
 user-invocable: true
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 argument-hint: "[対象テーブル or seedデータの説明]"
